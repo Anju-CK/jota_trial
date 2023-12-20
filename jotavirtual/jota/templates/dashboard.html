@@ -1,0 +1,32 @@
+{% extends "sidebar.html" %}
+{% load static %}
+{% block content %}
+<div class="overview-table">
+    <label class="overview-text">
+        overview
+    </label>
+    <div class="insight-table">
+            <div class="table-head">
+                <div class="head1">Space</div>
+                <div class="head2">View</div>
+                <div class="head3">Click</div>
+                <div class="head4">Share</div>
+            </div>
+            {% for book in books %}
+            <div class="table-body">
+                <div class="body1">
+                    <img src="{{ book.thumbnail }}" alt="Space_Image" class="img_style">
+                    <div class="content">
+                        <div class="name1">{{ book.name }}</div><br>
+                        <div class="address1">{{ book.address.address_1}}</div><br>
+                        <div class="address1">Created {{ book.formatted_date }}</div>
+                    </div>
+                </div>
+                <div class="body2">{{ book.view }}</div>
+                <div class="body3">{{ book.click }}</div>
+                <div class="body4">{{ book.share }}</div>
+            </div>
+            {% endfor %}
+    </div>
+</div>
+{% endblock content %}

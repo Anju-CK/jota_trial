@@ -1,0 +1,22 @@
+{% extends "header.html" %}
+{% load static %}
+{% block sidebar_content %}
+<div class="sidebar">
+            <img src="{% static 'jota/images/logo.svg' %}" alt="JotaVirtual" class="logo" />
+            <div class="dropdown" id="dropdown">LODGING <i class="fas fa-chevron-up" style="display:flex;"></i></div>
+            <ol id="menu" style="display: block;">
+                <li><a href="{% url 'dashboard' %}" ><i class="fas fa-chart-bar" style="margin-right: 15px;" id="dashboard"></i> Dashboard</a></li>
+                <li><a href="{% url 'space_list' %}" class="highlighted"><i class="fas fa-th" style="margin-right: 15px;" id="allSpaces"></i> All spaces</a></li>
+                <li><a href="{% url 'settings' %}"><i class="fas fa-cog" style="margin-right: 15px;" id="settings"></i> Settings</a></li>
+<!--                <li><a href="#"><img src="{% static 'jota/images/dashboard.svg' %}" alt="Dashboard"/> Dashboard</a></li>-->
+<!--                <li><a href="#"><img src="{% static 'jota/images/space.svg' %}" alt="All Space"/>All spaces</a></li>-->
+<!--                <li><a href="#"><img src="{% static 'jota/images/settings.svg' %}" alt="Settings"/> Settings</a></li>-->
+            </ol>
+        </div>
+{% endblock sidebar_content %}
+
+
+
+
+
+

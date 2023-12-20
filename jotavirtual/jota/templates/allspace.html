@@ -1,0 +1,56 @@
+
+{% extends "sidebar.html" %}
+{% block content %}
+<div class="layout">
+    <h1 class="space">All Spaces</h1>
+    <div class="about">Find and manage Your Spaces</div>
+    <div class="search-box">
+    <input type="text" class="search-input">
+    <i class="fas fa-search" id="search"></i>
+</div>
+    <div class="total">{{ api_data | length }} Total Spaces</div>
+    {% for space in api_data %}
+    <div class="entry-layout">
+        <div >
+            <img src="{{ space.thumbnail }}" alt="Space Image">
+        </div>
+        <div class="middle-section">
+            <span class="name">{{ space.name }}</span>
+            <span class="address">{{ space.address.address_1}}</span><br>
+            <span class="address">Created {{ space.formatted_date }}</span>
+        </div>
+        <div class="right-section">
+            <div></i><a href="{% url 'editspace' %}" ><i class="fa-solid fa-pen" id="editicon"></i> </a></div>
+            <div><i class="fa-solid fa-share-nodes"></i>
+<!--                <button class="view-modal">Share</button>-->
+<!--  <div class="popup">-->
+<!--    <header>-->
+<!--      <span>Share Modal</span>-->
+<!--      <div class="close"><i class="uil uil-times"></i></div>-->
+<!--    </header>-->
+<!--    <div class="content">-->
+<!--      <p>Share this link via</p>-->
+<!--      <ul class="icons">-->
+<!--        <a href="#"><i class="fab fa-facebook-f"></i></a>-->
+<!--        <a href="#"><i class="fab fa-twitter"></i></a>-->
+<!--        <a href="#"><i class="fab fa-instagram"></i></a>-->
+<!--        <a href="#"><i class="fab fa-whatsapp"></i></a>-->
+<!--        <a href="#"><i class="fab fa-telegram-plane"></i></a>-->
+<!--      </ul>-->
+<!--      <p>Or copy link</p>-->
+<!--      <div class="field">-->
+<!--        <i class="url-icon uil uil-link"></i>-->
+<!--        <input type="text" readonly value="https://codepen.io/coding_dev_">-->
+<!--        <button>Copy</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+
+<!--            </div>-->
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

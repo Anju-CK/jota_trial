@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="landing_header">
+
+    <img src="{% static 'jota/images/logo.svg' %}" alt="JotaVirtual" class="logo_img"/>
+    <div class="top_bar">
+        <div class="nav_bar">
+             <div><a href="#plan" class="nav-text" id="plans-link">Plans</a></div>
+             <div><a href="#contact" class="nav-text no-underline" id="contact-link">Show Interest</a></div>
+        </div>
+        <a href="{% url 'login' %}" class="portal">Go To Portal</a>
+    </div>
+
+</div>
+<div class="contents">
+    <section id="plan">
+        <div class="static-text">We will make Better way for<br> Matterport Tour</div>
+        <div class="subscription">Subscription Plans</div>
+        <div class="container-box">
+            <div class="container">
+
+                <div class="price-col">
+                    <div class="top-box">
+                        <h1>Bronze</h1>
+                        <h1> $19</h1>
+                        <div>per user/month billed annually</div>
+                        <button class="sub-btn">Subscribe now</button>
+                    </div>
+                    <div class="bottom-box">
+                        <div class="single-box">Customizable sales pipeline; up to 2</div>
+                        <div class="single-box">Email integration with tracking</div>
+                        <div class="single-box">Calender integration</div>
+                    </div>
+                </div>
+
+                <div class="price-col">
+                    <div class="top-box">
+                        <h1>Silver</h1>
+                        <h1> $49</h1>
+                        <div>per user/month billed annually</div>
+                        <button class="sub-btn-middle">Subscribe now</button>
+                    </div>
+                    <div class="bottom-box">
+                        <div class="single-box">Customizable sales pipeline; up to 2</div>
+                        <div class="single-box">Email integration with tracking</div>
+                        <div class="single-box">Calender integration</div>
+                    </div>
+                </div>
+
+                <div class="price-col">
+                    <div class="top-box">
+                        <h1>Gold</h1>
+                        <h1> $99</h1>
+                        <div>per user/month billed annually</div>
+                        <button class="sub-btn">Subscribe now</button>
+                    </div>
+                    <div class="bottom-box">
+                        <div class="single-box">Customizable sales pipeline; up to 2</div>
+                        <div class="single-box">Email integration with tracking</div>
+                        <div class="single-box">Calender integration</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <form action="{% url 'space_list' %}" method="get" class="contact-form">
+            <label class="interest">Show Your Interest</label>
+          <div class="outline" >
+            <label for="fullname" >Full Name</label><br>
+            <input type="text" id="fullname" name="fullname" class="not-text">
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" class="not-text">
+            <label for="number">Contact Number</label><br>
+            <input type="tel" id="number" name="number" class="not-text">
+            <label for="organization">Organization</label><br>
+            <input type="text" id="organization" name="organization" class="not-text">
+          </div>
+            <input type="submit" value="Submit" class="contact-submit">
+      </form>
+        <div class="contact-details">
+                CONTACT US
+                <span>
+                    <li>Barcelona,Espa&ntilde;a</li>
+                    <li>(+34) 937 376 275</li>
+                    <li>info@jotavirtual.com</li>
+                </span>
+            <div class="copyright">&#169; 2023 Jotavirtual</div>
+        </div>
+    </section>
+</div>
+{% endblock content %}

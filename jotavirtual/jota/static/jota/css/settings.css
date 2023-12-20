@@ -1,0 +1,23 @@
+.top-section{
+    border-bottom: 1px solid #D1D1D1;
+    display: flex;
+    padding-left: 327px;
+    padding-top: 36px;
+    padding-bottom: 19px;
+    gap: 50px;
+}
+#brand,
+#domain,
+#management,
+#billing {
+    font-weight: bold;
+    color: #03363D;
+}
+.inner-section{
+    background-color: #F8F9F9;
+    margin-left: 321px;
+    margin-top: 43px;
+    margin-bottom: 40px;
+    width: 75%;
+    height: 714px;
+}

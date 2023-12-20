@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="head">
+    <img src="{% static 'jota/images/logo.svg' %}" alt="JotaVirtual" class="logo_img"/>
+</div>
+
+<div class="border_box">
+    <div class="login_description">
+        <img src="{% static 'jota/images/logo.svg' %}" alt="JotaVirtual" class="des_img"/>
+        <span class="des_txt">
+            Take Reality<br>
+            To The Next Level
+        </span>
+    </div>
+    <div class="login_box">
+        <div class="login_text">Login</div>
+        <form action="{% url 'space_list' %}" method="get" class="login_form">
+              <div class="text_field">
+                <label for="Email">Email</label>
+                <input type="email" id="email" name="email" class="login-details"><br>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="login-details"><br>
+              </div>
+              <div class="submit-div">
+                  <input type="submit" value="Submit" class="submit">
+              </div>
+        </form>
+        <div class="forget_pwd">Forget Password?</div>
+    </div>
+</div>
+{% endblock content %}

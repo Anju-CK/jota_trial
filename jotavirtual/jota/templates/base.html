@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Jota Virtual{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'jota/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'jota/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'jota/css/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'jota/css/allspace.css' %}">
+    <link rel="stylesheet" href="{% static 'jota/css/editspace.css' %}">
+    <link rel="stylesheet" href="{% static 'jota/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'jota/css/landing_screen.css' %}">
+    <link rel="stylesheet" href="{% static 'jota/css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'jota/css/settings.css' %}">
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        {% block header_content %}
+        {% endblock %}
+    </header>
+    <aside>
+        {% block sidebar_content %}
+        {% endblock %}
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <script src="{% static 'jota/js/nav_underline.js' %}"></script>
+    <script src="{% static 'jota/js/setting_nav_underline.js' %}"></script>
+    <script src="{% static 'jota/js/sidebar_visibility.js' %}"></script>
+    <script src="{% static 'jota/js/share.js' %}"></script>
+</body>
+</html>

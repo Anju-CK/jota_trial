@@ -1,0 +1,28 @@
+{% extends "sidebar.html" %}
+{% load static %}
+{% block content %}
+<div class="outer-box">
+      <div class="title">Jotaspace1</div>
+      <div class="location">Infopark Kakkanad Kerala 682030 India</div>
+          <form action="/submit_form" method="post">
+              <div class="section1">
+                <label for="name" >Name</label><br>
+                <input type="text" id="name" name="name" class="text"><br><br>
+
+                <label for="name">Company Name</label><br>
+                <input type="text" id="companyname" name="companyname" class="text"><br><br>
+
+                <label for="name">Description</label><br>
+                <input type="text" id="description" name="description" class="text"><br><br>
+
+                <label for="name">Address</label><br>
+                <input type="text" id="address" name="address" class="text"><br><br>
+              </div>
+                <input type="submit" value="Update" class="update">
+          </form>
+
+    <div class="section2">
+        <iframe id="matterportFrame" src='https://my.matterport.com/work/?m=prnTDzrwvA8' frameborder='0' allowfullscreen allow='xr-spatial-tracking'></iframe>
+    </div>
+</div>
+{% endblock content %}

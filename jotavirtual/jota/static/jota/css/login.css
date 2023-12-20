@@ -1,0 +1,90 @@
+.head{
+    background-color: #FBFBFB;
+    width: 100%;
+    height: 100px;
+}
+.logo_img{
+    padding: 34px;
+}
+.border_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.login_description{
+     display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 30%;
+    height: 389px;
+    position: relative;
+}
+.des_img{
+    height: 105px;
+    width: 78%;
+}
+.des_txt{
+    color: #03363D;
+    font-size: 24px;
+    font-weight: 700;
+    position: absolute;
+    top: 25%;
+    left: 26%;
+}
+.login_box{
+    margin: 108px;
+    width: 521px;
+    height: 398px;
+    padding: 35px 35px 0 35px;
+    box-shadow: 0px 4px 12px 0px rgba(104, 115, 125, 0.15);
+    margin-top: 160px;
+}
+.login_text{
+    color: #03363D;
+    font-family: Poppins;
+    font-size: 19px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+}
+.text_field{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    padding: 30px 30px 0 30px;
+}
+.login-details {
+  padding: 8px;
+  border: 1px solid #2F3941;
+  background: #F8F9F9;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 90%;
+  height: 50px;
+  margin-left: 13px;
+}
+.submit-div{
+    display: flex;
+    justify-content: center;
+}
+.submit {
+    border: 2px solid #FF3C6D;
+    background: #FF3C6D;
+    width: 230px;
+    height: 40px;
+    padding: 10px 150px 10px 110px;
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    cursor: pointer;
+}
+.forget_pwd{
+    color: #00879A;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 30px 30px 0 30px;
+}
