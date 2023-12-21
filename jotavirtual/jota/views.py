@@ -180,3 +180,8 @@ def landing_screen_view(request):
 
 def editspace_view(request):
     return render(request, 'editspace.html')
+
+def brand_view(request):
+    return render(request, 'branding.html')
+
+
