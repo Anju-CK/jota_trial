@@ -19,4 +19,45 @@
     margin-bottom: 40px;
     width: 75%;
     height: 714px;
+    position: relative;
+    display: block;
+}
+.set1{
+    padding: 26px;
+    position: absolute;
+    border: 2px solid #FF3C6D;
+    width: 45%;
+    height: 42%;
+    top: 29%;
+    left: 20%;
+}
+.label1{
+    font-weight: 700;
+    margin-bottom: 3px;
+    font-size: 24px;
+    display: block;
+    color: #03363D;
+}
+.txt{
+    padding: 8px;
+    border: 1px solid #2F3941;
+    background: #F8F9F9;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+}
+.sub{
+    padding: 10px 25px;
+    border-radius: 4px;
+    background: #FF3C6D;
+    color: white;
+    border: None;
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    right: 26px;
+}
+.hidden{
+    display: none;
 }

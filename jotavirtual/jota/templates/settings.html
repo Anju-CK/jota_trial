@@ -3,13 +3,54 @@
 {% block content %}
 <div>
     <div class="top-section">
-        <a href="#" class="nav-text" id="brand">Customize your Brand</a>
-<!--        <a href="#" class="nav-text no-underline" id="domain">Custom Domain</a>-->
-        <a href="#" class="nav-text no-underline" id="management">Subscription Management</a>
-        <a href="#" class="nav-text no-underline" id="billing">Billing</a>
+        <div  class="nav-text" id="brand" onclick="showContent('set1')">Customize your Brand</div>
+        <div class="nav-text no-underline" id="management" onclick="showContent('set2')">Subscription Management</div>
+        <div  class="nav-text no-underline" id="billing" onclick="showContent('set3')">Billing</div>
     </div>
     <div class="inner-section">
 
+        <div class="set1">
+            <div class="label1">Customize Your Brand</div>
+            <p>Empower your brand with a personalized touch.</p>
+            <form action="#" method="post">
+                <label>Your Brand Name</label><br>
+                <input type="text" name="domain" placeholder=" example.com" class="txt"><br><br>
+                <label>Upload Logo</label><br>
+                <input type="text" name="domain" placeholder=" Upload logo" class="txt"><br><br>
+                <input type="submit" value="Submit" class="sub">
+            </form>
+        </div>
+
+
+         <div class="set2 hidden">
+            <div>Subscription</div>
+        </div>
+
+        <div class="set3 hidden">
+            <div>Billing</div>
+        </div>
+
+
+
     </div>
 </div>
+
+
+<script>
+    function showContent(sectionId) {
+        // Hide all content sets
+        var allSets = document.querySelectorAll('.inner-section > div');
+        allSets.forEach(function(set) {
+            set.classList.add('hidden');
+        });
+
+        // Show the selected content set
+        var selectedSet = document.querySelector('.' + sectionId);
+        if (selectedSet) {
+            selectedSet.classList.remove('hidden');
+        }
+    }
+</script>
+
+
 {% endblock content %}
