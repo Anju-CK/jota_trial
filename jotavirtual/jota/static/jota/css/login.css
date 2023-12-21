@@ -67,6 +67,7 @@
 .submit-div{
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
 }
 .submit {
     border: 2px solid #FF3C6D;

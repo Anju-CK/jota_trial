@@ -15,20 +15,36 @@
         </span>
     </div>
     <div class="login_box">
-        <div class="login_text">Login</div>
-        <form action="{% url 'space_list' %}" method="get" class="login_form">
-              <div class="text_field">
-                <label for="Email">Email</label>
-                <input type="email" id="email" name="email" class="login-details"><br>
+        <div id="loginForm">
+            <div class="login_text">Login</div>
+            <form action="{% url 'space_list' %}" method="get" class="login_form" >
+                  <div class="text_field">
+                    <label for="Email">Email</label>
+                    <input type="email" id="email" name="email" class="login-details"><br>
 
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" class="login-details"><br>
-              </div>
-              <div class="submit-div">
-                  <input type="submit" value="Submit" class="submit">
-              </div>
-        </form>
-        <div class="forget_pwd">Forget Password?</div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="login-details"><br>
+                  </div>
+                  <div class="submit-div">
+                      <input type="submit" value="Submit" class="submit">
+                  </div>
+            </form>
+            <a href="javascript:void(0);" onclick="replaceFormWithMessage()" class="forget_pwd" >Forgot Password?</a>
+        </div>
+        <div id="forgetpasswordform" style="display: none;">
+            <div class="login_text">Forgot Password</div>
+            <form action="{% url 'space_list' %}" method="get" class="login_form" >
+                  <div class="text_field"><br>
+                    <label for="Email">Email</label>
+                    <input type="email" id="email" name="email" class="login-details"><br>
+                  </div><br>
+                  <div class="submit-div">
+                      <input type="submit" value="Submit" class="submit">
+                  </div>
+            </form>
+
+        </div>
     </div>
 </div>
 {% endblock content %}
+
