@@ -1,9 +1,24 @@
 {% extends "base.html" %}
 {% block header_content %}
-        <div class="header">
-                <div class="symbol">
-                        <a href="{% url 'login' %}" class="symbol-text">SL</a>
-                </div>
-                <div>Skyline</div>
+<div class="header">
+    <div class="symbol" >
+        <div class="symbol-text" onclick="toggleDropdown()">SL</div>
+        <div class="dropdown-content" id="logoutLink" >
+            <a href="{% url 'login' %}" class="logout">Logout</a>
         </div>
+    </div>
+    <div>Skyline</div>
+</div>
+
+<script>
+    function toggleDropdown() {
+        var logout = document.getElementById('logoutLink');
+
+        if (logout.style.display === 'none' || logout.style.display === '') {
+            logout.style.display = 'block';
+        } else {
+            logout.style.display = 'none';
+        }
+    }
+</script>
 {% endblock header_content %}
