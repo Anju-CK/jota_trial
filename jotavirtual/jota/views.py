@@ -184,4 +184,7 @@ def editspace_view(request):
 def brand_view(request):
     return render(request, 'branding.html')
 
+def whitelabel_view(request):
+    return render(request, 'whitelabeling.html')
+
 
