@@ -88,16 +88,10 @@
     font-weight: 700;
 }
 .back_btn{
-     display: flex;
-    align-items: center;
-    justify-content: center;
     color: #00879A;
     font-family: Poppins;
     font-size: 17px;
     font-weight: 700;
-    position: absolute;
-    top: 249px;
-    left: 192px;
 }
 .fa-eye:before {
     content: "\f06e";
