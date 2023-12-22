@@ -121,3 +121,42 @@
     font-weight: 700;
     text-decoration: none;
 }
+
+
+
+.checkbox-label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 0px;
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    height: 10px;
+    width: 16px;
+    border: 1px solid #aaa;
+}
+
+.checkbox:checked + .checkmark {
+    background-color: #2196F3;
+    border: none;
+}
+
+.checkmark i {
+    display: none;
+    color: white;
+}
+
+.checkbox:checked + .checkmark i {
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+}
+
+.remember_me{
+    padding-left: 40px;
+    position: relative;
+    top: -25px;
+}
