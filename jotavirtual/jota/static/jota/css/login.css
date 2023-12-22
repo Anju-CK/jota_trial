@@ -86,8 +86,6 @@
     font-family: Poppins;
     font-size: 14px;
     font-weight: 700;
-    line-height: 20px;
-    padding: 30px 30px 0 30px;
 }
 .back_btn{
      display: flex;
@@ -100,4 +98,32 @@
     position: absolute;
     top: 249px;
     left: 192px;
+}
+.fa-eye:before {
+    content: "\f06e";
+    position: absolute;
+    bottom: 58px;
+    right: 50px;
+}
+.fa-eye-slash:before {
+    content: "\f070";
+    position: absolute;
+    bottom: 58px;
+    right: 50px;
+}
+.bottom_content{
+     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.register{
+    color: #5E6D6F;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+}
+.contactlink{
+    color: #1742DC;
+    font-weight: 700;
+    text-decoration: none;
 }

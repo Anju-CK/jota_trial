@@ -23,13 +23,22 @@
                     <input type="email" id="email" name="email" class="login-details"><br>
 
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="login-details"><br>
+                    <input type="password" id="password" name="password" class="login-details" maxlength="25"><br>
+                      <span class="toggle-password" onclick="togglePasswordVisibility()" style="cursor: pointer;position: relative">
+                        <i id="eyeIcon" class="fa fa-eye" aria-hidden="true" ></i>
+                    </span>
+
                   </div>
                   <div class="submit-div">
                       <input type="submit" value="Submit" class="submit">
                   </div>
             </form>
-            <a href="javascript:void(0);" onclick="replaceFormWithMessage()" class="forget_pwd" >Forgot Password?</a>
+            <div class="bottom_content">
+                <a href="javascript:void(0);" onclick="replaceFormWithMessage()" class="forget_pwd" >Forgot Password?</a>
+                <div><span class="register">To Register, Please </span>
+                    <a href="/matterport/#contact" class="contactlink">Contact Us</a>
+                </div>
+            </div>
         </div>
         <div id="forgetpasswordform" style="display: none; position: relative;">
             <div class="login_text">Forgot Password</div>
@@ -46,5 +55,24 @@
         </div>
     </div>
 </div>
+
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+<script>
+    function togglePasswordVisibility() {
+        const passwordField = document.getElementById('password');
+        const eyeIcon = document.getElementById('eyeIcon');
+
+        if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            eyeIcon.classList.remove('fa-eye');
+            eyeIcon.classList.add('fa-eye-slash');
+        } else {
+            passwordField.type = 'password';
+            eyeIcon.classList.remove('fa-eye-slash');
+            eyeIcon.classList.add('fa-eye');
+        }
+    }
+</script>
+
 {% endblock content %}
 
