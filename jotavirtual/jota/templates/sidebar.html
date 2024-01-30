@@ -6,7 +6,7 @@
             <div class="dropdown" id="dropdown">LODGING <i class="fas fa-chevron-up" style="display:flex;"></i></div>
             <ol id="menu" style="display: block;">
                 <li><a href="{% url 'dashboard' %}" ><i class="fas fa-chart-bar" style="margin-right: 15px;" id="dashboard"></i> Dashboard</a></li>
-                <li><a href="{% url 'space_list' %}" class="highlighted"><i class="fas fa-th" style="margin-right: 15px;" id="allSpaces"></i> All spaces</a></li>
+                <li><a href="{% url 'space_list' %}" ><i class="fas fa-th" style="margin-right: 15px;" id="allSpaces"></i> All spaces</a></li>
                 <li><a href="{% url 'whitelabel' %}"><i class="fa-solid fa-tag" style="margin-right: 16px;" id="labelling"></i>White Labeling</a></li>
                 <li><a href="{% url 'brand' %}"><img src="{% static 'jota/images/brand.svg' %}" alt="Branding" style="margin-right: 10px;" id="branding"/>
                     <span style="position: absolute;">Branding</span></a></li>
@@ -15,6 +15,24 @@
 <!--                <li><a href="#"><img src="{% static 'jota/images/space.svg' %}" alt="All Space"/>All spaces</a></li>-->
 <!--                <li><a href="#"><img src="{% static 'jota/images/settings.svg' %}" alt="Settings"/> Settings</a></li>-->
             </ol>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+        // jQuery function to handle sidebar link clicks and highlight based on current URL
+        $(document).ready(function () {
+            // Get the current URL
+            var currentUrl = window.location.href;
+
+            // Loop through each sidebar link and compare its URL with the current URL
+            $('#menu li a').each(function () {
+                var menuUrl = $(this).attr('href');
+
+                // Check if the current URL matches the sidebar link's URL
+                if (currentUrl.includes(menuUrl)) {
+                    $(this).closest('li').addClass('highlighted'); // Add 'highlighted' class to the matched link
+                }
+            });
+        });
+        </script>
         </div>
 {% endblock sidebar_content %}
 
