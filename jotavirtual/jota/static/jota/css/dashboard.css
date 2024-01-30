@@ -59,6 +59,11 @@
     width: 85px;
     padding: 5px 15px;
 }
+.social_media_popup_style{
+    height: 30px;
+    width: 30px;
+    padding: 5px 15px;
+}
 .content{
     width: 235px;
     word-break: break-word;

@@ -1,6 +1,13 @@
 
 {% extends "sidebar.html" %}
+{% load static %}
 {% block content %}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-xkV7r+fsF6DMHto4td3O+kMk8PtkFsojEIfBN0Q8hSgEXqKt5aD5/4e5RN2rX1U1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
 <div class="layout">
     <h1 class="space">All Spaces</h1>
     <div class="about">Find and manage Your Spaces</div>
@@ -21,36 +28,31 @@
         </div>
         <div class="right-section">
             <div></i><a href="{% url 'editspace' %}" ><i class="fa-solid fa-pen" id="editicon"></i> </a></div>
-            <div><i class="fa-solid fa-share-nodes"></i>
-<!--                <button class="view-modal">Share</button>-->
-<!--  <div class="popup">-->
-<!--    <header>-->
-<!--      <span>Share Modal</span>-->
-<!--      <div class="close"><i class="uil uil-times"></i></div>-->
-<!--    </header>-->
-<!--    <div class="content">-->
-<!--      <p>Share this link via</p>-->
-<!--      <ul class="icons">-->
-<!--        <a href="#"><i class="fab fa-facebook-f"></i></a>-->
-<!--        <a href="#"><i class="fab fa-twitter"></i></a>-->
-<!--        <a href="#"><i class="fab fa-instagram"></i></a>-->
-<!--        <a href="#"><i class="fab fa-whatsapp"></i></a>-->
-<!--        <a href="#"><i class="fab fa-telegram-plane"></i></a>-->
-<!--      </ul>-->
-<!--      <p>Or copy link</p>-->
-<!--      <div class="field">-->
-<!--        <i class="url-icon uil uil-link"></i>-->
-<!--        <input type="text" readonly value="https://codepen.io/coding_dev_">-->
-<!--        <button>Copy</button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-
-
-
-<!--            </div>-->
+            <div id="share-popup" class="hidden">
+                <ul id="social-icons">
+                    {% for platform, link in social_links.items %}
+                        <a href="{{ link }}">
+                            <img src="{% static 'jota/images/' %}{{ platform }}.png" alt="{{ platform }}" class="social_media_popup_style"/>
+                        </a>
+                    {% endfor %}
+                </ul>
+            </div>
+            <i class="fa-solid fa-share-nodes" id="share-button"></i>
         </div>
     </div>
     {% endfor %}
 </div>
+<script>
+    $(function() {
+        $("#share-button").click(function() {
+            // Open the popup dialog
+            $("#share-popup").dialog({
+                modal: true,
+                width: 400,
+                title: "Share",
+            });
+        });
+    });
+</script>
+
 {% endblock content %}

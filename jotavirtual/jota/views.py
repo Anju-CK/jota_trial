@@ -101,7 +101,15 @@ class MatterportSpaceListView(generics.ListAPIView):
                 # Format the date and assign it to the 'formatted_date' field
                 space['formatted_date'] = space['created'].strftime('%b %d, %Y')
 
-            return render(request, 'allspace.html', {'api_data': data})
+            url_to_share = "https://my.matterport.com/show/?m=sKRxxDcS4AZ"
+            social_links = {
+                "facebook": f"https://www.facebook.com/sharer/sharer.php?u={url_to_share}",
+                "twitter": f"https://twitter.com/intent/tweet?url={url_to_share}",
+                "linkedin": f"https://www.linkedin.com/sharing/share-offsite/?url={url_to_share}",
+                "pinterest": f"https://pinterest.com/pin/create/button/?url={url_to_share}",
+                "email": f"mailto:?subject=Check%20out%20this%20link&body={url_to_share}",
+            }
+            return render(request, 'allspace.html', {'api_data': data, 'social_links': social_links})
         else:
             return Response({"message": f"Failed to retrieve data for search term {search_term}"},
                             status=response.status_code)
