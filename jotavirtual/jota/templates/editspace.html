@@ -2,27 +2,135 @@
 {% load static %}
 {% block content %}
 <div class="outer-box">
-      <div class="title">Jotaspace1</div>
-      <div class="location">Infopark Kakkanad Kerala 682030 India</div>
-          <form action="/submit_form" method="post">
-              <div class="section1">
-                <label for="name" >Name</label><br>
-                <input type="text" id="name" name="name" class="text"><br><br>
+    <div class="title">Jotaspace1</div>
+    <div class="location">Infopark Kakkanad Kerala 682030 India</div>
 
-                <label for="name">Company Name</label><br>
-                <input type="text" id="companyname" name="companyname" class="text"><br><br>
+    <h3>Edit details</h3>
+    <div class="section1">
+        <div class="first-section">
+        <div  class="nav-label" id="public" onclick="showContent('part1')">Public Details</div>
+        <div  class="nav-label no-underline" id="address" onclick="showContent('part2')">Address</div>
+        <div  class="nav-label no-underline" id="internal" onclick="showContent('part3')">Internal Details</div>
+        </div>
+    </div>
 
-                <label for="name">Description</label><br>
-                <input type="text" id="description" name="description" class="text"><br><br>
+    <div class="public-section">
+    <div class="part1">
+        <div class="public-info">Information may appear publicly in 3D Showcase in accordance with your visibility settings in Workshop.</div>
+        <form action="/submit_form" method="post">
+            <label for="name" class="label-name">Name</label><br>
+            <div class="input-line">
+                <input type="text" id="name" name="name" class="text">
+            </div>
+            <label for="presented" class="label-name">Presented By</label><br>
+            <div class="input-line">
+                <input type="text" id="presented" name="presented" class="text">
+            </div>
+            <label for="url" class="label-name">URL (commonly, a property detail web page)</label><br>
+            <div class="input-line">
+                <input type="text" id="url" name="url" class="text">
+            </div>
+            <label for="summary" class="label-name">Summary</label><br>
+            <div class="input-line">
+                <input type="text" id="summary" name="summary" class="text">
+            </div>
+            <label for="contactname" class="label-name">Contact Name</label><br>
+            <div class="input-line">
+                <input type="text" id="contactname" name="contactname" class="text">
+            </div>
+            <input type="submit" value="Accept" class="accept">
+            <input type="submit" value="Cancel" class="cancel">
+        </form>
+    </div>
 
-                <label for="name">Address</label><br>
-                <input type="text" id="address" name="address" class="text"><br><br>
-              </div>
-                <input type="submit" value="Update" class="update">
-          </form>
+    <div class="part2 hidden">
+        <div class="addre">Please enter the address for this Space. You can limit public visibility with the options below.</div>
+        <form action="/submit_form" method="post">
+            <label for="addresss" class="label-name">Address</label><br>
+            <div class="input-line">
+                <input type="text" id="addresss" name="addresss" class="text">
+            </div>
+            <label for="address" class="label-name">Address Visibility</label><br>
+            <div class="input-line">
+                <input type="text" id="addre" name="addre" class="text">
+            </div>
+            <input type="submit" value="Accept" class="accept">
+            <input type="submit" value="Cancel" class="cancel">
+        </form>
+    </div>
+
+    <div class="part3 hidden">
+        <div class="internal">People viewing your Public or Unlisted Spaces will not see this information in 3D Showcase.</div>
+        <form action="/submit_form" method="post">
+            <label for="internalid" class="label-name">Internal ID</label><br>
+            <div class="input-line">
+                <input type="text" id="internalid" name="internalid" class="text"><br>
+            </div>
+            <label for="mlsname" class="label-name">MLS Name</label><br>
+            <div class="input-line">
+                <input type="text" id="mlsname" name="mlsname" class="text">
+            </div>
+            <label for="mlslisting" class="label-name">MLS Listing ID</label><br>
+            <div class="input-line">
+                <input type="text" id="mlslisting" name="mlslisting" class="text">
+            </div>
+            <label for="description" class="label-name">Description</label><br>
+            <div class="input-line">
+                <input type="text" id="description" name="description" class="text">
+            </div>
+            <input type="submit" value="Accept" class="accept">
+            <input type="submit" value="Cancel" class="cancel">
+        </form>
+    </div>
+    </div>
 
     <div class="section2">
         <iframe id="matterportFrame" src='https://my.matterport.com/work/?m=prnTDzrwvA8' frameborder='0' allowfullscreen allow='xr-spatial-tracking'></iframe>
+<!--        <button id="embedButton" class="embed">Embed media</button>-->
     </div>
+
 </div>
+
+<script>
+    function showContent(sectionId) {
+        // Hide all content sets
+        var allSets = document.querySelectorAll('.public-section > div');
+        allSets.forEach(function(set) {
+            set.classList.add('hidden');
+        });
+
+        // Show the selected content set
+        var selectedSet = document.querySelector('.' + sectionId);
+        if (selectedSet) {
+            selectedSet.classList.remove('hidden');
+        }
+    }
+
+    document.getElementById('public').addEventListener('click', function(event) {
+    event.preventDefault();
+    this.classList.remove('no-underline');
+    document.getElementById('address').classList.add('no-underline');
+    document.getElementById('internal').classList.add('no-underline');
+    });
+
+    document.getElementById('address').addEventListener('click', function(event) {
+        event.preventDefault();
+        this.classList.remove('no-underline');
+        document.getElementById('public').classList.add('no-underline');
+        document.getElementById('internal').classList.add('no-underline');
+    });
+
+    document.getElementById('internal').addEventListener('click', function(event) {
+        event.preventDefault();
+        this.classList.remove('no-underline');
+        document.getElementById('public').classList.add('no-underline');
+        document.getElementById('address').classList.add('no-underline');
+    });
+
+    document.getElementById('embedButton').addEventListener('click', function() {
+        var embedUrl = '{% url "embed" %}';
+        window.location.href = embedUrl;
+    });
+
+</script>
 {% endblock content %}

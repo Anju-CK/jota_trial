@@ -27,7 +27,7 @@
             <span class="address">Created {{ space.formatted_date }}</span>
         </div>
         <div class="right-section">
-            <div></i><a href="{% url 'editspace' %}" ><i class="fa-solid fa-pen" id="editicon"></i> </a></div>
+            <div></i><a href="{% url 'space' %}" ><i class="fa-solid fa-pen" id="editicon"></i> </a></div>
             <div id="share-popup" class="hidden">
                 <ul id="social-icons">
                     {% for platform, link in social_links.items %}
