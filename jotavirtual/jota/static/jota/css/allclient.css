@@ -1,0 +1,46 @@
+.layout_admin {
+    display: flex;
+    flex-direction: column;
+    /* Add other styling as needed */
+}
+
+.button-container_admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submit_admin {
+    margin: 1px 92px 2px 3px;
+    border: 10px solid #FF3C6D;
+    background: #FF3C6D;
+    width: 90px;
+    height: 7px;
+    padding: 10px;
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.body1_admin {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    border-bottom: 1px solid #ccc;
+    padding:10px;
+  }
+  .body2_admin, .body3_admin, .body4_admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    border-bottom: 1px solid #ccc;
+    padding:4px;
+  }

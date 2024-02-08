@@ -9,60 +9,36 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <div class="layout">
+    <h1 class="space">Overview</h1>
     <h1 class="space">All Client</h1>
     <div class="about">Find and manage Your Clients</div>
-    <div><a href="{% url 'addclient' %}" class="submit">Add Client</a></div>
-    <div class="search-box">
-    <input type="text" class="search-input">
-    <i class="fas fa-search" id="search"></i>
-</div>
-    <div class="total">{{ clients | length }} Total Spaces</div>
-    <!-- {% for space in api_data %}
-    <div class="entry-layout">
-        <div >
-            <img src="{{ space.thumbnail }}" alt="Space Image">
+    <div class="button-container_admin">
+        <div class="search-box">
+            <input type="text" class="search-input">
+            <i class="fas fa-search" id="search"></i>
         </div>
-        <div class="middle-section">
-            <span class="name">{{ space.name }}</span>
-            <span class="address">{{ space.address.address_1}}</span><br>
-            <span class="address">Created {{ space.formatted_date }}</span>
-        </div>
-        <div class="right-section">
-            <div></i><a href="{% url 'editspace' %}" ><i class="fa-solid fa-pen" id="editicon"></i> </a></div>
-            <div id="share-popup" class="hidden">
-                <ul id="social-icons">
-                    {% for platform, link in social_links.items %}
-                        <a href="{{ link }}">
-                            <img src="{% static 'jota/images/' %}{{ platform }}.png" alt="{{ platform }}" class="social_media_popup_style"/>
-                        </a>
-                    {% endfor %}
-                </ul>
-            </div>
-            <i class="fa-solid fa-share-nodes" id="share-button"></i>
-        </div>
+        <a href="{% url 'addclient' %}" class="submit_admin">Add Client</a>
     </div>
-    {% endfor %} -->
 
-    <!-- <div class="overview-table"> -->
-        <!-- <label class="overview-text">
-            overview
-        </label> -->
-        <div class="insight-table">
-                <div class="table-head">
-                    <div class="head1">Name</div>
-                    <div class="head2">Assets</div>
-                    <div class="head3">Selected Plan</div>
-                    <div class="head4">Plan Status</div>
+
+<div class="total">{{ clients | length }} Total Spaces</div>
+    <div class="insight-table">
+            <div class="table-head">
+                <div class="head1">Name</div>
+                <div class="head2">Assets</div>
+                <div class="head3">Selected Plan</div>
+                <div class="head4">Plan Status</div>
+            </div>
+            {% for client in clients %}
+            <div class="table-body">
+                <div class="body1_admin">{{ client.name }}</div>
+                <div class="body2_admin">{{ client.assets }}</div>
+                <div class="body3_admin">{{ client.selected_plan }}</div>
+                <div class="body4_admin" style="color: {% if client.plan_status == 'Active' %}red{% endif %}">
+                    {{ client.plan_status }}
                 </div>
-                {% for client in clients %}
-                <div class="table-body">
-                    <div class="body1">{{ client.name }}</div>
-                    <div class="body2">{{ client.assets }}</div>
-                    <div class="body3">{{ client.selected_plan }}</div>
-                    <div class="body4">{{ client.plan_status }}</div>
-                </div>
-                {% endfor %}
-        </div>
-    <!-- </div> -->
-<!-- </div> -->
+            </div>
+            {% endfor %}
+    </div>
+</div>
 {% endblock content %}
