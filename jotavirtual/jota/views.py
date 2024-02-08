@@ -147,6 +147,9 @@ def space_view(request):
 def editspace_view(request):
     return render(request, 'editspace.html')
 
+def addspace_view(request):
+    return render(request, 'addspace.html')
+
 def embed_view(request):
     return render(request, 'embed.html')
 

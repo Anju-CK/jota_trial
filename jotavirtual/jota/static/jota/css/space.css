@@ -5,28 +5,35 @@
     position: relative;
 }
 .heading {
-  text-align: center;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 34px;
+  position: absolute;
+  right: 700px;
+  bottom: 750px;
 }
 .desc {
-    text-align: center;
-    margin-right: 65px;
-    bottom: 720px;
+  position: absolute;
+  right: 850px;
+  bottom: 651px;
 }
-.matter {
-  display: block;
-  margin: 50px auto 0;
+#matterportFrames {
+    width: 800px;
+    height: 584px;
+    display: block;
+    margin: 50px auto 0;
+    position: absolute;
+    right: 330px;
+    bottom: 20px;
 }
 
 .edit {
-  padding: 10px 25px;
+  padding: 10px 45px;
   border-radius: 4px;
   background: #FF3C6D;
   color: white;
   border: None;
   cursor: pointer;
   position: absolute;
-  right: 430px;
-  bottom: 654px;
+  right: 330px;
+  bottom: 650px;
 }

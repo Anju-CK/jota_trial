@@ -12,7 +12,8 @@
     <h1 class="space">All Spaces</h1>
     <div class="about">Find and manage Your Spaces</div>
     <div class="search-box">
-    <input type="text" class="search-input">
+    <input type="text" class="search-input" placeholder="Search by Space Name">
+    <button id="addButton" class="add">Add Space</button>
     <i class="fas fa-search" id="search"></i>
 </div>
     <div class="total">{{ api_data | length }} Total Spaces</div>
@@ -38,6 +39,7 @@
                 </ul>
             </div>
             <i class="fa-solid fa-share-nodes" id="share-button"></i>
+            <i class="fa fa-trash" id="delete-button"></i>
         </div>
     </div>
     {% endfor %}
@@ -52,6 +54,10 @@
                 title: "Share",
             });
         });
+    });
+    document.getElementById('addButton').addEventListener('click', function() {
+        var addUrl = '{% url "addspace" %}';
+        window.location.href = addUrl;
     });
 </script>
 
