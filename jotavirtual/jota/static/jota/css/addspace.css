@@ -1,0 +1,74 @@
+.addlayout{
+    margin: 40px 80px 32px 319px;
+    height: 713px;
+    padding: 30px 43px 20px 37px;
+    position: relative;
+}
+
+.create{
+  color: #00879A;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.info{
+    color: #2F3941;
+    padding-bottom: 24px;
+    padding-top: 20px;
+}
+
+.main-section {
+    display: flex;
+        align-items: center;
+}
+
+.image {
+    margin-right: 20px;
+    border: 1px solid #ccc;
+}
+
+.no-link {
+    margin-top: 103px;
+    font-size: 14px;
+}
+
+.no-link a{
+    color: #2da158;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+.no-link a:hover {
+    text-decoration: underline;
+}
+
+.form-group {
+        margin-bottom: 15px;
+    }
+
+.link {
+    color: #2F3941;
+    display: block;
+    margin-bottom: 26px;
+}
+
+.sharing {
+    width: 355%;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.submit {
+  padding: 10px 25px;
+  border-radius: 4px;
+  background: #FF3C6D;
+  color: white;
+  border: None;
+  cursor: pointer;
+  position: absolute;
+  right: 200px;
+  bottom: 331px;
+}
+

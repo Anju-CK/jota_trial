@@ -1,9 +1,35 @@
-
 {% extends "sidebar.html" %}
 {% load static %}
 {% block content %}
+<div class="addlayout">
+    <h1 class="create">Create 3D Tour</h1>
+    <div class="info">3D Model Information</div>
+    <div class="main-section">
+        <div class="image">
+            <img id="displayedImage" src="{% static 'jota/images/placeholder' %}.png" alt="Image"><br>
+        </div>
+        <div class="right-section">
+            <div class="form-group">
+                <label for="sharing" class="link">Matterport Sharing Link</label>
+                <input type="text" id="sharing" name="sharing" placeholder="Enter Matterport URL" class="sharing">
+                <input type="submit" value="Submit" class="submit" onclick="validateInput()">
+            </div>
+        </div>
+    </div>
+    <div class="no-link">
+        <a href="https://matterport.com/" target="_blank"><i class="fa fa-fw fa-question-circle" aria-hidden="true"></i>Don't have a Matterport URL yet?</a>
+    </div>
+</div>
+<script>
+    function validateInput() {
+        var inputField = document.getElementById("sharing");
 
-
-
+        if (inputField.value.trim() === "") {
+            inputField.style.border = "2px solid red";
+        } else {
+            inputField.style.border = ""; // Reset to default border
+        }
+    }
+</script>
 
 {% endblock content %}
